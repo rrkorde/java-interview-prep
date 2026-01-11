@@ -1,8 +1,12 @@
 # Interview Preparation Progress Tracker
 
-**Last Updated:** [Date will be updated by Claude in each session]
+**Last Updated:** January 10, 2026 - Session 1 Break
 
-**Total Progress:** 0% Complete
+**Total Progress:** 8% Complete (Topic 3.1 JVM Architecture - 85% complete)
+
+**Candidate Profile:** 8.5 years experience, Fintech, Needs depth in Core Java (4/10), Spring Boot (4/10), Microservices (3/10), System Design (2/10), DSA (2/10), Behavioral (2/10)
+
+**Session 1 Duration:** ~2.5 hours of intensive learning
 
 ---
 
@@ -14,19 +18,163 @@
 
 ---
 
-## 1. Core Java Concepts (0% Complete)
+## PART I: Core Java & Fundamentals
 
-### 1.1 JVM Internals 🔴
+### Topic 1: Java Language Fundamentals 🔴
+**Status:** Not Started (Quick Review Planned)
+**Approach:** Candidate has 8.5 years experience - will do QUICK review focusing on:
+- Tricky edge cases
+- Interview gotchas
+- Advanced scenarios
+- Less time on basics, more on depth
+
+#### 1.1 Java Basics & Syntax 🔴
+- **Status:** Not Started
+- **Approach:** Quick review (15-20 min) - Focus on tricky questions only
+- **Practice Questions Completed:** 0/20
+- **Notes:** Will cover: autoboxing pitfalls, String pool tricks, wrapper class caching
+
+#### 1.2 String Manipulation 🔴
+- **Status:** Not Started
+- **Approach:** Quick review (15-20 min) - Focus on performance and internals
+- **Practice Questions Completed:** 0/20
+- **Notes:** Will cover: String pool deep dive, intern() mechanics, performance optimization
+
+#### 1.3 Memory Management Basics 🔴
+- **Status:** Not Started
+- **Approach:** Quick review (15-20 min) - Focus on references and leak scenarios
+- **Practice Questions Completed:** 0/15
+- **Notes:** Will cover: Reference types, common memory leak patterns
+
+---
+
+### Topic 2: Object-Oriented Programming 🔴
+**Status:** Not Started (Quick Review Planned)
+**Approach:** Quick review of advanced OOP concepts, less time on basics
+
+#### 2.1 Classes and Objects 🔴
+- **Status:** Not Started
+- **Approach:** Quick review (10 min) - Focus on constructor chaining, initialization order
+- **Practice Questions Completed:** 0/20
+
+#### 2.2 Encapsulation 🔴
+- **Status:** Not Started
+- **Approach:** Quick review (10 min) - Focus on immutability patterns
+- **Practice Questions Completed:** 0/15
+
+#### 2.3 Inheritance 🔴
+- **Status:** Not Started
+- **Approach:** Quick review (15 min) - Focus on tricky scenarios
+- **Practice Questions Completed:** 0/20
+
+#### 2.4 Polymorphism 🔴
+- **Status:** Not Started
+- **Approach:** Medium depth (20 min) - Focus on dynamic dispatch, casting
+- **Practice Questions Completed:** 0/20
+
+#### 2.5 Abstraction 🔴
+- **Status:** Not Started
+- **Approach:** Medium depth (20 min) - Focus on interface default methods, abstract class design
+- **Practice Questions Completed:** 0/20
+
+---
+
+### Topic 3: JVM Internals & Performance 🟡
+**Status:** IN PROGRESS - Starting Session 1
+**Priority:** HIGH - Critical for depth understanding (MOST TIME HERE)
+
+#### 3.1 JVM Architecture 🟢
+- **Status:** Near Complete (Session 1 - 85% complete)
+- **Sub-Topics:**
+  - [x] ClassLoader subsystem (Bootstrap, Extension, Application) - Deep dive ✅
+  - [x] Class loading delegation model and custom ClassLoaders ✅
+  - [x] Runtime Data Areas (Method Area, Heap, Stack, PC Register, Native Method Stack) ✅
+  - [x] Execution Engine (Interpreter, JIT Compiler) - COMPLETED ✅
+  - [ ] Metaspace vs PermGen (Java 8+ migration) - NEXT SESSION
+  - [ ] Direct memory and off-heap allocation - NEXT SESSION
+  - [ ] Bytecode structure and verification - OPTIONAL
+- **Practice Questions Completed:** 18/20
+- **Code Examples Done:** 8/8 ✅
+- **Notes:**
+  - ⭐ **MASTERED: ClassLoader mechanics**
+    - Parent delegation model and caching
+    - Class identity = [FQN + ClassLoader]
+    - Dependency version conflicts (shading, exclusions)
+  - ⭐ **MASTERED: Runtime Data Areas**
+    - Method Area (Metaspace) vs Heap vs Stack
+    - String Pool (Heap in Java 7+)
+    - Integer caching (-128 to 127) - Initially missed, now mastered
+    - Memory leak patterns with static variables
+  - ⭐ **MASTERED: JIT Compilation & Performance**
+    - Interpreter vs JIT (C1/C2)
+    - Tiered compilation (Level 0-4)
+    - JIT optimizations: inlining, escape analysis, loop unrolling, dead code elimination
+    - JVM warm-up concept and production strategies
+    - Deoptimization ("made not entrant")
+    - Monomorphic vs polymorphic call sites
+    - Production diagnosis of JIT issues
+  - **Weak areas identified (now corrected):**
+    - Integer caching gotcha (3/10 → 10/10)
+  - **Strong areas:**
+    - Production troubleshooting
+    - Understanding performance implications
+    - Diagnosing deoptimization issues
+
+#### 3.2 Memory Model 🔴
 - **Status:** Not Started
 - **Sub-Topics:**
-  - [ ] JVM Architecture (Class Loader, Runtime Data Area, Execution Engine)
-  - [ ] Memory Model (Heap, Stack, Method Area, PC Register, Native Method Stack)
-  - [ ] Garbage Collection algorithms (G1GC, ZGC, Shenandoah)
-  - [ ] JIT Compilation and optimization
-  - [ ] Class loading mechanism
-- **Practice Questions Completed:** 0/10
-- **Code Examples Done:** 0/5
+  - [ ] Heap structure (Young Gen: Eden, S0, S1; Old Gen)
+  - [ ] Object promotion and aging process
+  - [ ] Stack frames and thread stacks
+  - [ ] Escape analysis and stack allocation
+  - [ ] Compressed OOPs and memory optimization
+  - [ ] Memory sizing and tuning parameters
+- **Practice Questions Completed:** 0/20
+- **Code Examples Done:** 0/10
 - **Notes:** -
+
+#### 3.3 Garbage Collection 🔴
+- **Status:** Not Started (HIGH PRIORITY)
+- **Sub-Topics:**
+  - [ ] GC fundamentals: Mark & Sweep, generational GC
+  - [ ] Minor GC vs Major GC vs Full GC
+  - [ ] Serial GC, Parallel GC algorithms
+  - [ ] G1GC (Garbage First) - deep dive
+  - [ ] ZGC and Shenandoah (low-latency collectors)
+  - [ ] GC tuning and analysis
+  - [ ] Stop-the-World events and mitigation
+  - [ ] Reference types (Weak, Soft, Phantom)
+- **Practice Questions Completed:** 0/20
+- **Code Examples Done:** 0/12
+- **Notes:** Critical for production troubleshooting
+
+#### 3.4 JIT Compilation 🔴
+- **Status:** Not Started
+- **Sub-Topics:**
+  - [ ] Tiered compilation (C1 vs C2 compilers)
+  - [ ] Method inlining and optimization
+  - [ ] Escape analysis and scalar replacement
+  - [ ] Loop unrolling and dead code elimination
+  - [ ] Code cache management
+  - [ ] AOT compilation and GraalVM
+- **Practice Questions Completed:** 0/15
+- **Code Examples Done:** 0/6
+- **Notes:** -
+
+#### 3.5 Class Loading Mechanism 🔴
+- **Status:** Not Started
+- **Sub-Topics:**
+  - [ ] Class loading phases (Loading, Linking, Initialization)
+  - [ ] Parent delegation model in depth
+  - [ ] Custom ClassLoaders and use cases
+  - [ ] ClassLoader leaks and memory issues
+  - [ ] NoClassDefFoundError vs ClassNotFoundException
+  - [ ] Module system (Java 9+) and class loading
+- **Practice Questions Completed:** 0/20
+- **Code Examples Done:** 0/8
+- **Notes:** -
+
+**Topic 3 Summary:** 0/5 subtopics completed (3.1 in progress)
 
 ### 1.2 Collections Framework 🔴
 - **Status:** Not Started
